@@ -18,14 +18,20 @@ public class Main {
         ArrayList<Process> processes = new ArrayList<Process>();
         Random r = new Random();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             int size = sizes[r.nextInt(3)];
             int duration = r.nextInt(4) + 1;
-            processes.add(new Process(size, duration));
+            String name = "p" + i;
+            processes.add(new Process(size, duration, name));
         }
 
         for (Process p : processes) {
-            System.out.println("Duration: " + p.getDuration() + " Size: " + p.getSize());
+            System.out.println("Name: "+ p.getName() + " Duration: " + p.getDuration() + " Size: " + p.getSize());
         }
+
+        PagingAlgorithms p = new PagingAlgorithms();
+        SwappingAlgorithms s = new SwappingAlgorithms();
+
+        s.firstFit(processes);
     }
 }

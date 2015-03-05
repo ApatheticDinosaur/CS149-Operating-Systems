@@ -5,10 +5,12 @@ public class Process {
 
     private int size;
     private int duration;
+    private String name;
 
-    public Process(int size, int duration) {
+    public Process(int size, int duration, String name) {
         this.size = size;
         this.duration = duration;
+        this.name = name;
     }
 
     public int getSize() {
@@ -17,5 +19,13 @@ public class Process {
 
     public int getDuration() {
         return duration;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }
